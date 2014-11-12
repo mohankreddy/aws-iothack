@@ -31,7 +31,7 @@ public class Team35 {
         try {
 
             Team35 team35 = new Team35();
-            team35.sendGet();
+            team35.sendGet(args[0]);
 
         }catch (Exception exception) {
 
@@ -40,9 +40,10 @@ public class Team35 {
     }
 
     // HTTP GET request
-    private void sendGet() throws Exception {
+    private void sendGet(String deviceId) throws Exception {
 
-        String url = "https://api.spark.io/v1/devices/53ff6c066667574851452567/events/team35-activity?access_token=b8008a6c4c2db4033b446525dbe4b6968532ea03";
+        //53ff6c066667574851452567
+        String url = "https://api.spark.io/v1/devices/"+deviceId+"/events/team35-activity?access_token=b8008a6c4c2db4033b446525dbe4b6968532ea03";
         HttpClient httpclient = new DefaultHttpClient();
         HttpGet httpget = new HttpGet(url);
 
